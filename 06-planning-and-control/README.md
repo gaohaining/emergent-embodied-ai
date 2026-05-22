@@ -5,6 +5,10 @@
 ## 初学者先读
 
 - [cognition-and-control.md](cognition-and-control.md)：认知、控制和行动闭环。
+- [task-planning.md](task-planning.md)：任务规划。
+- [motion-planning.md](motion-planning.md)：运动规划。
+- [skill-library.md](skill-library.md)：技能库。
+- [failure-recovery.md](failure-recovery.md)：失败检测和恢复。
 
 ## 分层理解
 

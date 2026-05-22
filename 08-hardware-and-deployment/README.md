@@ -6,6 +6,7 @@
 
 1. [hardware.md](hardware.md)：机器人平台、传感器和执行器。
 2. [deployment.md](deployment.md)：真实部署、安全、延迟和运维。
+3. [safety-and-operations.md](safety-and-operations.md)：安全、监控和运维检查清单。
 
 ## 硬件影响什么
 

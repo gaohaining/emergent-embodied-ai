@@ -5,6 +5,7 @@
 ## 初学者先读
 
 - [state-and-scene.md](state-and-scene.md)：状态、场景和对象表示。
+- [spatial-representation.md](spatial-representation.md)：空间表示。
 - [action-representation.md](action-representation.md)：动作表示。
 - [world-models.md](world-models.md)：世界模型。
 
@@ -19,3 +20,10 @@
 - 用离散动作 token 表示动作。
 
 表征会直接影响数据效率、泛化能力、控制稳定性和可解释性。
+
+## 初学者先抓住
+
+- 状态表示回答“现在是什么情况”。
+- 空间表示回答“东西在哪里，机器人如何到达”。
+- 动作表示回答“模型输出什么，控制器怎么执行”。
+- 世界模型回答“如果我这么做，接下来会发生什么”。

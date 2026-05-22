@@ -8,6 +8,7 @@
 2. [simulation.md](simulation.md)：仿真环境和合成数据。
 3. [evaluation-basics.md](evaluation-basics.md)：评测基本问题。
 4. [evaluation-stack.md](evaluation-stack.md)：benchmark 和实机评测字段。
+5. [benchmark-design.md](benchmark-design.md)：如何设计和阅读 benchmark。
 
 ## 仿真的作用
 

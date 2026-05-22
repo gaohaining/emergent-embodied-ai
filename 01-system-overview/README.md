@@ -5,9 +5,11 @@
 ## 推荐阅读
 
 1. [system-loop.md](system-loop.md)：感知、行动、反馈和学习闭环。
-2. [enabling-stack-overview.md](enabling-stack-overview.md)：支撑栈总览。
-3. [capability-ladder.md](capability-ladder.md)：从远程控制到持续学习的能力阶梯。
-4. [enabling-stack-index.md](enabling-stack-index.md)：早期支撑栈索引。
+2. [task-types.md](task-types.md)：具身智能常见任务类型。
+3. [how-to-read-a-system.md](how-to-read-a-system.md)：如何读懂一个系统、论文或项目。
+4. [enabling-stack-overview.md](enabling-stack-overview.md)：支撑栈总览。
+5. [capability-ladder.md](capability-ladder.md)：从远程控制到持续学习的能力阶梯。
+6. [enabling-stack-index.md](enabling-stack-index.md)：早期支撑栈索引。
 
 ## 一个系统的核心闭环
 

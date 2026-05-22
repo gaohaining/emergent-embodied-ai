@@ -6,6 +6,10 @@
 
 1. [robot-learning-basics.md](robot-learning-basics.md)：机器人学习基础。
 2. [models.md](models.md)：模型架构和策略学习。
+3. [behavior-cloning.md](behavior-cloning.md)：行为克隆。
+4. [diffusion-policy.md](diffusion-policy.md)：扩散策略。
+5. [vision-language-action.md](vision-language-action.md)：视觉语言动作模型。
+6. [reinforcement-learning.md](reinforcement-learning.md)：强化学习在机器人中的位置。
 
 ## 常见路线
 
@@ -22,3 +26,19 @@
 - 单任务策略强不代表多任务泛化强。
 - 大模型会理解语言，但不一定会稳定控制动作。
 - 真实机器人上的失败恢复比一次成功更重要。
+
+## 一个最小策略学习问题
+
+给定：
+
+- 观察：相机图像、机器人状态、语言指令。
+- 目标：把物体放到指定位置。
+- 数据：人类遥操作示范。
+
+学习：
+
+- 从当前观察和目标输出下一步动作。
+
+评测：
+
+- 在新物体、新位置、新光照下是否仍能完成任务。

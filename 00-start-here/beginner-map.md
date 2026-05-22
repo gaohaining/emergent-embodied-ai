@@ -47,3 +47,19 @@
 3. 每个技术环节先读 README，不急着读细节。
 4. 再从 [../10-case-studies/README.md](../10-case-studies/README.md) 选一个系统拆解。
 5. 最后用 [../09-frontier-tracking/papers.md](../09-frontier-tracking/papers.md) 选论文精读。
+
+## 7 天入门路径
+
+如果你只有一周，可以这样读：
+
+| 天 | 目标 | 阅读 |
+| --- | --- | --- |
+| Day 1 | 建立全局地图 | [what-is-embodied-ai.md](what-is-embodied-ai.md), [../01-system-overview/system-loop.md](../01-system-overview/system-loop.md) |
+| Day 2 | 看懂任务类型和系统证据 | [../01-system-overview/task-types.md](../01-system-overview/task-types.md), [../01-system-overview/how-to-read-a-system.md](../01-system-overview/how-to-read-a-system.md) |
+| Day 3 | 理解感知和表征 | [../02-perception/perception-pipeline.md](../02-perception/perception-pipeline.md), [../03-representation/action-representation.md](../03-representation/action-representation.md) |
+| Day 4 | 理解数据为什么关键 | [../04-data/data-lifecycle.md](../04-data/data-lifecycle.md), [../04-data/teleoperation.md](../04-data/teleoperation.md) |
+| Day 5 | 理解策略学习 | [../05-policy-learning/behavior-cloning.md](../05-policy-learning/behavior-cloning.md), [../05-policy-learning/vision-language-action.md](../05-policy-learning/vision-language-action.md) |
+| Day 6 | 理解规划、控制和失败恢复 | [../06-planning-and-control/task-planning.md](../06-planning-and-control/task-planning.md), [../06-planning-and-control/failure-recovery.md](../06-planning-and-control/failure-recovery.md) |
+| Day 7 | 理解评测和部署 | [../07-simulation-and-evaluation/benchmark-design.md](../07-simulation-and-evaluation/benchmark-design.md), [../08-hardware-and-deployment/safety-and-operations.md](../08-hardware-and-deployment/safety-and-operations.md) |
+
+读完这 7 天，不需要记住所有名词，但应该能判断一篇材料主要属于哪个技术环节，以及它的证据强不强。
