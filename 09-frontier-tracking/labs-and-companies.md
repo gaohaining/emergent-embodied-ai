@@ -2,7 +2,8 @@
 
 | 名称 | 类型 | 关注方向 | 代表工作 | 最近动态 | 观察问题 |
 | --- | --- | --- | --- | --- | --- |
-|  | lab / company / community |  |  |  |  |
+| 亮源新创（Light Origins） | company | 具身基础模型，预训练优先路线 | 具身 foundation model（未发表） | 2026-05 首次公开技术路线，正在 close 新一轮融资 | 互联网视频预训练能否真正弥合 embodiment gap；年底是否能展示 GPT-3.5 级别泛化能力 |
+| Physical Intelligence（π） | company | 具身基础模型，Flow Matching 路线 | π0、π0.5、FAST tokenizer | 2024-2025 连续发布多任务灵巧操作结果 | 多任务泛化能力能否持续 scaling；与自回归路线的长期优劣 |
 
 ## 记录维度
 
