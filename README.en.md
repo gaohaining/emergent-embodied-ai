@@ -25,20 +25,6 @@ Recommended reading order:
 13. [12-roadmaps](12-roadmaps/README.md): learning, research, and technical roadmaps.
 14. [99-templates-and-notes](99-templates-and-notes/README.md): templates for paper notes, topic briefs, and question cards.
 
-## Technical Links
-
-```text
-task goal
-→ perceive the environment
-→ represent the world and actions
-→ collect and organize data
-→ learn policies
-→ plan and control
-→ simulate and evaluate
-→ deploy on hardware
-→ track frontiers and review cases
-```
-
 ## How To Use
 
 1. If you are new to the field, start with [00-start-here/overview-map.md](00-start-here/overview-map.md).

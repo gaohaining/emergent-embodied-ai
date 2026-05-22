@@ -25,20 +25,6 @@ Language: 中文 | [English](README.en.md)
 13. [12-roadmaps](12-roadmaps/README.md)：学习路线、研究路线和技术路线。
 14. [99-templates-and-notes](99-templates-and-notes/README.md)：论文笔记、主题综述和问题卡片模板。
 
-## 技术环节
-
-```text
-任务目标
-→ 感知环境
-→ 表示世界和动作
-→ 收集与组织数据
-→ 学习策略
-→ 规划与控制
-→ 仿真和评测
-→ 硬件部署
-→ 前沿跟踪和案例复盘
-```
-
 ## 怎么使用
 
 1. 如果你刚进入这个方向，先读 [00-start-here/overview-map.md](00-start-here/overview-map.md)。
