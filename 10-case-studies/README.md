@@ -5,7 +5,7 @@
 ## 文件
 
 - [templates/case-study.md](templates/case-study.md)：案例分析模板。
-- [case-study-reading-guide.md](case-study-reading-guide.md)：初学者如何读案例。
+- [case-study-reading-guide.md](case-study-reading-guide.md)：如何读案例。
 
 ## 案例选择标准
 

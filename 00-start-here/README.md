@@ -1,10 +1,10 @@
 # 00 Start Here
 
-这里是新手入口。先读这个目录，再进入后面的技术环节。
+这里是入口区。刚进入方向的读者可以先读这里；已经有基础的读者也可以用它快速对齐范围、原则和维护方式。
 
 ## 先读顺序
 
-1. [beginner-map.md](beginner-map.md)：一张给初学者的全局地图。
+1. [overview-map.md](overview-map.md)：一张全局地图。
 2. [what-is-embodied-ai.md](what-is-embodied-ai.md)：具身智能是什么。
 3. [language-policy.md](language-policy.md)：中英文支持和翻译规则。
 4. [scope.md](scope.md)：这个仓库关注什么、不关注什么。

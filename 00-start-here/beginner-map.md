@@ -1,4 +1,4 @@
-# Beginner Map
+# Overview Map
 
 ## 一句话版本
 
@@ -22,7 +22,7 @@
 
 ## 技术环节对应表
 
-| 问题 | 对应目录 | 初学者理解 |
+| 问题 | 对应目录 | 基础理解 |
 | --- | --- | --- |
 | 机器人看到了什么？ | [02-perception](../02-perception/README.md) | 从图像、深度、触觉等信号中识别环境 |
 | 世界和动作怎么表示？ | [03-representation](../03-representation/README.md) | 把连续复杂世界变成模型能处理的状态、对象和动作 |
@@ -32,7 +32,7 @@
 | 怎么判断好坏？ | [07-simulation-and-evaluation](../07-simulation-and-evaluation/README.md) | 在仿真和真实环境里评测成功率、泛化和安全 |
 | 怎么真实落地？ | [08-hardware-and-deployment](../08-hardware-and-deployment/README.md) | 处理硬件、安全、延迟、成本和维护 |
 
-## 初学者常见误区
+## 常见误区
 
 - 误区 1：只看大模型，忽略硬件和控制。
 - 误区 2：只看 demo，不看评测设置和失败样本。

@@ -2,7 +2,7 @@
 
 规划与控制解决的问题是：如何把目标变成机器人可以执行的动作序列。
 
-## 初学者先读
+## 先读
 
 - [cognition-and-control.md](cognition-and-control.md)：认知、控制和行动闭环。
 - [task-planning.md](task-planning.md)：任务规划。

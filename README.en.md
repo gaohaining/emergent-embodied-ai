@@ -2,9 +2,9 @@
 
 Language: [中文](README.md) | English
 
-A beginner-friendly knowledge base for embodied AI, organized by the technical links of an embodied AI system from input to real-world deployment.
+A knowledge base for learning, research, and practice in embodied AI, organized by the technical links of an embodied AI system from input to real-world deployment.
 
-This repository is not meant to be a raw link collection. It helps readers build a clear map: what components an embodied AI system needs, what problem each component solves, which methods are common, and where frontier papers or projects fit in the system.
+This repository is not meant to be a raw link collection. It helps readers build a clear map: what components an embodied AI system needs, what problem each component solves, which methods are common, and where frontier papers, system case studies, and open projects fit in the system.
 
 ## Learning Path
 
@@ -27,7 +27,7 @@ Recommended reading order:
 
 ## Why Organize By Technical Links
 
-Beginners often see many terms before they understand how those terms relate to one another. This repository follows a system pipeline:
+Embodied AI spans models, data, control, simulation, hardware, and deployment. Organizing by technical links helps newcomers build a map, while also supporting deeper research and route analysis:
 
 ```text
 task goal
@@ -45,7 +45,7 @@ When reading a paper or project, first identify which technical link it mainly i
 
 ## How To Use
 
-1. Start with [00-start-here/beginner-map.md](00-start-here/beginner-map.md).
+1. If you are new to the field, start with [00-start-here/overview-map.md](00-start-here/overview-map.md).
 2. Skim each directory README along the learning path.
 3. Check [11-glossary](11-glossary/README.md) when you meet unfamiliar terms.
 4. Use [09-frontier-tracking](09-frontier-tracking/README.md) for frontier updates.

@@ -1,24 +1,29 @@
 # AGENTS.md
 
-This repository is a beginner-friendly knowledge base for emergent embodied AI. Agents working here should organize knowledge by technical links in an embodied AI system, not as an undifferentiated link dump.
+This repository is a layered knowledge base for emergent embodied AI, serving learning, research, and practice. Agents working here should organize knowledge by technical links in an embodied AI system, not as an undifferentiated link dump.
 
 ## Audience
 
-The primary reader is a beginner who may know machine learning or AI, but does not yet have a clear map of robotics, embodied AI, robot learning, VLA, simulation, control, hardware, and deployment.
+The repository should support multiple reader levels:
 
-Write for that reader:
+- Newcomers who need a clear map of robotics, embodied AI, robot learning, VLA, simulation, control, hardware, and deployment.
+- Intermediate readers who want to connect concepts, papers, systems, and implementation choices.
+- Advanced readers who want frontier tracking, route analysis, case studies, and research judgment.
+
+Write so that each level can get value:
 
 - Start with the problem each topic solves.
 - Prefer concrete examples over abstract claims.
 - Explain acronyms before using them heavily.
 - Separate facts, interpretations, and open questions.
 - Avoid assuming the reader already knows robotics jargon.
+- Include deeper tradeoffs, failure modes, and open research questions when useful.
 
 ## Repository Structure
 
 Use the existing technical-link structure:
 
-- `00-start-here/`: beginner entry, scope, principles, maintenance.
+- `00-start-here/`: entry points, scope, principles, language policy, maintenance.
 - `01-system-overview/`: full system loop, stack overview, capability ladder.
 - `02-perception/`: vision, depth, point cloud, tactile, proprioception, multimodal understanding.
 - `03-representation/`: state, scene, object, spatial, action, and world-model representations.
@@ -39,20 +44,22 @@ When adding content, first decide which technical link it belongs to. Put stable
 
 Use Markdown. Keep pages readable and scannable.
 
-Preferred section pattern for beginner-facing topic pages:
+Preferred section pattern for topic pages:
 
 ```md
 # Topic
 
 ## It Solves What
 
-## Beginner Explanation
+## Plain Explanation
 
 ## Common Methods
 
 ## Why It Matters In Embodied AI
 
 ## Typical Failure Modes
+
+## Advanced Notes
 
 ## Representative Papers Or Projects
 
@@ -82,7 +89,7 @@ Rules:
 - In Chinese pages, introduce important terms as `中文术语（English Term, Acronym）`.
 - Preserve canonical English names for papers, models, datasets, benchmarks, and projects.
 - Update `11-glossary/README.md` when adding important bilingual terminology.
-- Prefer clear beginner-facing explanation over literal translation.
+- Prefer clear explanation over literal translation.
 - If an English page is incomplete, mark it with `Status: draft` or `Status: partial translation`.
 
 See `00-start-here/language-policy.md` for the detailed policy.
@@ -100,15 +107,16 @@ Rules:
 - For high-impact claims, include a short caveat or evidence-strength note.
 - Do not copy long passages from external sources. Summarize in original wording and link the source.
 
-## Beginner Orientation
+## Reader Orientation
 
-Every major topic should help a beginner answer:
+Every major topic should help readers answer:
 
 - What problem does this solve?
 - What are the inputs and outputs?
 - Where does it sit in the embodied AI system loop?
 - What are the simplest examples?
 - What can go wrong?
+- What are the important tradeoffs or research disagreements?
 - Which papers, repos, or systems should I look at next?
 
 ## Updating Existing Pages
@@ -135,7 +143,7 @@ A case study should answer:
 - What is new or important?
 - What evidence supports it?
 - What are its limitations?
-- What should a beginner learn from it?
+- What should readers learn from it at different depths?
 
 ## Paper Notes
 
@@ -147,7 +155,7 @@ Paper notes should not just summarize the paper. They should explain:
 - What problem it solves.
 - What prior assumption it changes.
 - Whether the evidence is simulation, benchmark, real robot, code, dataset, or demo.
-- What a beginner should remember after reading.
+- What a reader should remember after reading.
 
 ## File And Naming Conventions
 
@@ -163,7 +171,7 @@ Paper notes should not just summarize the paper. They should explain:
 Before finishing a substantial update:
 
 - Check Markdown links resolve.
-- Make sure the new content has a clear beginner-facing explanation.
+- Make sure the new content has a clear plain-language explanation plus useful depth where appropriate.
 - Make sure dynamic claims have source URLs or are clearly marked as open questions.
 - Make sure new pages are reachable from a relevant `README.md`.
 - Avoid turning the repository into a raw awesome list.
@@ -172,8 +180,8 @@ Before finishing a substantial update:
 
 Near-term priorities:
 
-1. Fill each technical directory with beginner-level explanations.
+1. Fill each technical directory with clear explanations, advanced notes, tradeoffs, and open questions.
 2. Build source maps from papers, official project pages, code repositories, articles, discussions, search results, and related external materials.
 3. Create case studies for OpenVLA, Open X-Embodiment / RT-X, Octo, LeRobot, pi0, and representative simulation or benchmark projects.
-4. Expand `11-glossary/README.md` with beginner-friendly definitions.
+4. Expand `11-glossary/README.md` with concise bilingual definitions and concept distinctions.
 5. Keep `12-roadmaps/learning-roadmap.md` aligned with the technical-link structure.
