@@ -6,6 +6,7 @@
 
 - [inbox.md](inbox.md)：临时收集所有新材料。
 - [papers.md](papers.md)：论文跟踪表。
+- [community-insights.md](community-insights.md)：技术社区精彩文章（知乎、Medium、机器之心等）。
 - [labs-and-companies.md](labs-and-companies.md)：实验室、公司和产品动态。
 - [datasets-and-benchmarks.md](datasets-and-benchmarks.md)：数据集、benchmark 和评测动态。
 - [open-source.md](open-source.md)：开源项目和工具链。
