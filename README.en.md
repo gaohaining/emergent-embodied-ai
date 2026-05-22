@@ -25,9 +25,7 @@ Recommended reading order:
 13. [12-roadmaps](12-roadmaps/README.md): learning, research, and technical roadmaps.
 14. [99-templates-and-notes](99-templates-and-notes/README.md): templates for paper notes, topic briefs, and question cards.
 
-## Why Organize By Technical Links
-
-Embodied AI spans models, data, control, simulation, hardware, and deployment. Organizing by technical links helps newcomers build a map, while also supporting deeper research and route analysis:
+## Technical Links
 
 ```text
 task goal
@@ -40,8 +38,6 @@ task goal
 → deploy on hardware
 → track frontiers and review cases
 ```
-
-When reading a paper or project, first identify which technical link it mainly improves, then ask what bottleneck it addresses.
 
 ## How To Use
 

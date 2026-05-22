@@ -25,9 +25,7 @@ Language: 中文 | [English](README.en.md)
 13. [12-roadmaps](12-roadmaps/README.md)：学习路线、研究路线和技术路线。
 14. [99-templates-and-notes](99-templates-and-notes/README.md)：论文笔记、主题综述和问题卡片模板。
 
-## 为什么按技术环节分目录
-
-具身智能横跨模型、数据、控制、仿真、硬件和部署。按技术环节组织，可以让入门读者建立地图，也方便进阶读者做专题研究和路线判断：
+## 技术环节
 
 ```text
 任务目标
@@ -40,8 +38,6 @@ Language: 中文 | [English](README.en.md)
 → 硬件部署
 → 前沿跟踪和案例复盘
 ```
-
-这样读论文或看项目时，可以先判断它属于哪一层，再理解它解决了什么瓶颈。
 
 ## 怎么使用
 
