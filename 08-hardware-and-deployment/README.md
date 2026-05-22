@@ -7,6 +7,10 @@
 1. [hardware.md](hardware.md)：机器人平台、传感器和执行器。
 2. [deployment.md](deployment.md)：真实部署、安全、延迟和运维。
 3. [safety-and-operations.md](safety-and-operations.md)：安全、监控和运维检查清单。
+4. [robot-platforms.md](robot-platforms.md)：机器人形态和平台选择。
+5. [sensors.md](sensors.md)：传感器栈。
+6. [humanoid-robots.md](humanoid-robots.md)：人形机器人。
+7. [dexterous-hands.md](dexterous-hands.md)：灵巧手和灵巧操作。
 
 ## 硬件影响什么
 

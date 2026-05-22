@@ -23,6 +23,14 @@
 | 可供性 | Affordance | 环境或物体对某种动作的可执行性，例如哪里可抓、哪里可放。 | [perception-pipeline](../02-perception/perception-pipeline.md) |
 | 本体感知 | Proprioception | 机器人对自身关节、速度、末端状态等内部状态的感知。 | [tactile-and-proprioception](../02-perception/tactile-and-proprioception.md) |
 | Benchmark | Benchmark | 用于比较方法的标准任务、数据集或评测协议。 | [benchmark-design](../07-simulation-and-evaluation/benchmark-design.md) |
+| 视觉语言模型 | Vision-Language Model, VLM | 同时处理视觉和语言输入的模型。 | [multimodal-understanding](../02-perception/multimodal-understanding.md) |
+| Action Chunking | Action Chunking | 一次预测一段动作序列，而不是单步动作。 | [act](../05-policy-learning/act.md) |
+| 跨本体学习 | Cross-Embodiment Learning | 在不同机器人身体和动作空间之间复用经验。 | [cross-embodiment-learning](../05-policy-learning/cross-embodiment-learning.md) |
+| 离线强化学习 | Offline Reinforcement Learning | 从固定数据集学习策略，减少在线试错。 | [offline-rl](../05-policy-learning/offline-rl.md) |
+| 层级策略 | Hierarchical Policy | 把高层任务决策和低层动作控制分开。 | [hierarchical-policy](../05-policy-learning/hierarchical-policy.md) |
+| Flow Policy | Flow Policy | 使用 flow matching 等连续生成过程生成机器人动作。 | [flow-policy](../05-policy-learning/flow-policy.md) |
+| 灵巧操作 | Dexterous Manipulation | 涉及多指、触觉和复杂接触的精细操作。 | [dexterous-hands](../08-hardware-and-deployment/dexterous-hands.md) |
+| 本体 | Embodiment | 智能系统的身体形态、传感器、动作空间和物理约束。 | [cross-embodiment-learning](../05-policy-learning/cross-embodiment-learning.md) |
 
 ## 待补术语
 

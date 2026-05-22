@@ -6,6 +6,11 @@
 
 - [templates/case-study.md](templates/case-study.md)：案例分析模板。
 - [case-study-reading-guide.md](case-study-reading-guide.md)：如何读案例。
+- [openvla.md](openvla.md)：OpenVLA 案例。
+- [open-x-embodiment-rt-x.md](open-x-embodiment-rt-x.md)：Open X-Embodiment / RT-X 案例。
+- [octo.md](octo.md)：Octo 案例。
+- [lerobot.md](lerobot.md)：LeRobot 案例。
+- [pi0.md](pi0.md)：pi0 案例。
 
 ## 案例选择标准
 
