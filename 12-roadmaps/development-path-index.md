@@ -1,4 +1,4 @@
-# Development Path Index
+# 发展路径索引
 
 这是早期发展路径索引，已经合并到路线图目录。
 

@@ -1,4 +1,4 @@
-# State And Scene
+# 状态与场景
 
 ## 状态是什么
 
@@ -19,7 +19,7 @@
 - 语义地图。
 - latent representation。
 
-## Open Questions
+## 开放问题
 
 - 通用机器人策略是否需要显式对象表示？
 - 端到端 latent 表征能否可靠处理长程任务？

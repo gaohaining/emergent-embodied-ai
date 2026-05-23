@@ -1,4 +1,4 @@
-# Case Study: OpenVLA
+# 案例研究：OpenVLA
 
 ## 基本信息
 

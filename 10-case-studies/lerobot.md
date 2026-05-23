@@ -1,4 +1,4 @@
-# Case Study: LeRobot
+# 案例研究：LeRobot
 
 ## 基本信息
 

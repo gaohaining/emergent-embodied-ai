@@ -1,4 +1,4 @@
-# Case Study: Name
+# 案例研究：Name
 
 ## 基本信息
 

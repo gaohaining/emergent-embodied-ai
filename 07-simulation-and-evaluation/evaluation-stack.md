@@ -1,4 +1,4 @@
-# Evaluation
+# 评测
 
 ## Benchmark 记录字段
 
@@ -24,7 +24,7 @@
 - 平均耗时：
 - 安全事件：
 
-## Open Questions
+## 开放问题
 
 - 如何评估开放词汇任务完成能力？
 - 如何避免 benchmark 变成数据集记忆测试？

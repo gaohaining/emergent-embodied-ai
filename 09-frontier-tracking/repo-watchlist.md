@@ -1,4 +1,4 @@
-# Primary Source Workflow
+# 一手来源工作流
 
 这个页面说明本仓库如何优先从论文、官方项目页、代码仓库、数据集页面和 benchmark 页面整理材料。
 

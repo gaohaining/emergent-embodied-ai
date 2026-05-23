@@ -1,4 +1,4 @@
-# Datasets And Benchmarks
+# 数据集与基准
 
 | 名称 | 类型 | 模态 | 机器人平台 | 任务范围 | 规模 | 链接 | 局限 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -9,7 +9,7 @@
 | CALVIN | benchmark / environment | 视觉、语言、状态、动作 | 仿真机械臂 | 长程语言条件操作任务 | 待复查 | 待补链接 | 仿真环境，真实迁移需谨慎 |
 | RLBench | benchmark / environment | 视觉、状态、动作 | 仿真机械臂 | 多任务操作 benchmark | 待复查 | 待补链接 | 与真实世界差距、任务分布有限 |
 | ManiSkill | simulator / benchmark | RGB-D、状态、动作 | 多种机器人模型 | 操作技能、仿真训练、评测 | 任务和资产规模需按版本复查 | 待补链接 | 仿真物理和真实接触仍有差距 |
-| RoboTwin 2.0 | simulator / benchmark / data generator | 视觉、语言、动作、任务配置 | 双臂平台及其数字孪生 | 双臂操作、强 domain randomization、数据合成与 benchmark | 50 个双臂任务级别，规模和版本需持续复查 | [Project](https://robotwin-platform.github.io/) | 强在双臂数据合成和训测一体化，但仍需持续观察 sim2real 与真实硬件覆盖 |
+| RoboTwin 2.0 | 仿真器 / 基准 / 数据生成器 | 视觉、语言、动作、任务配置 | 双臂平台及其数字孪生 | 双臂操作、强 domain randomization、数据合成与 benchmark | 50 个双臂任务级别，规模和版本需持续复查 | [项目页](https://robotwin-platform.github.io/) | 强在双臂数据合成和训测一体化，但仍需持续观察 sim2real 与真实硬件覆盖 |
 | BEHAVIOR | benchmark / environment | 视觉、语义、物体状态 | 虚拟 embodied agents / 机器人相关环境 | 家庭活动和长程任务 | 待复查 | 待补链接 | 更偏复杂环境和任务，低层机器人控制映射需确认 |
 | LIBERO | benchmark | 视觉、语言、状态、动作 | 仿真机械臂 | lifelong robot learning / manipulation | 待复查 | 待补链接 | 主要用于知识迁移评测，和真实部署距离需标注 |
 

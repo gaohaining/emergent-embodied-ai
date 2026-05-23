@@ -1,4 +1,4 @@
-# Weekly Review: YYYY-WW
+# 周度回顾：YYYY-WW
 
 ## 本周最重要的 3 件事
 

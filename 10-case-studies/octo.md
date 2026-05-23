@@ -1,4 +1,4 @@
-# Case Study: Octo
+# 案例研究：Octo
 
 ## 基本信息
 

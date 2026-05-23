@@ -1,54 +1,54 @@
-# Paper Note: Title
+# 论文笔记：标题
 
-## Metadata
+## 元信息
 
-- Title:
-- Authors:
-- Year:
-- Institution:
-- Link:
-- Code:
-- Data:
-- Tags:
+- 标题：
+- 作者：
+- 年份：
+- 机构：
+- 链接：
+- 代码：
+- 数据：
+- 标签：
 
-## TL;DR
-
-
-## Problem
+## 一句话总结
 
 
-## Method
+## 它解决什么问题
 
 
-## Evidence
-
-- Evaluation:
-- Robot platform:
-- Tasks:
-- Baselines:
-- Metrics:
-
-## Key Figures Or Tables
+## 方法
 
 
-## Strengths
+## 证据
 
-- 
+- 评测：
+- 机器人平台：
+- 任务：
+- 对比基线：
+- 指标：
 
-## Limitations
+## 关键图表
+
+
+## 优点
 
 - 
 
-## What This Changes
+## 局限
+
+- 
+
+## 改变了什么判断
 
 - 对基础支持的影响：
 - 对发展路径的影响：
 - 对前沿判断的影响：
 
-## Questions
+## 问题
 
 - 
 
-## Follow-Up
+## 后续
 
 - 

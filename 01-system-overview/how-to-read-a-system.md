@@ -1,4 +1,4 @@
-# How To Read A System
+# 如何阅读一个系统
 
 ## 它解决什么
 

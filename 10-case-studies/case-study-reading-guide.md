@@ -1,4 +1,4 @@
-# Case Study Reading Guide
+# 案例研究阅读指南
 
 ## 它解决什么
 

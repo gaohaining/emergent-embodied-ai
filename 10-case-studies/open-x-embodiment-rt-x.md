@@ -1,4 +1,4 @@
-# Case Study: Open X-Embodiment And RT-X
+# 案例研究：Open X-Embodiment And RT-X
 
 ## 基本信息
 

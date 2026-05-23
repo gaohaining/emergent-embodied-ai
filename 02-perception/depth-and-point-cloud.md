@@ -1,4 +1,4 @@
-# Depth And Point Cloud
+# 深度与点云
 
 ## 它解决什么
 
@@ -23,7 +23,7 @@
 - 遮挡会导致点云不完整。
 - 传感器噪声会影响控制。
 
-## Open Questions
+## 开放问题
 
 - 端到端 VLA 是否还需要显式 3D 表征？
 - 点云、NeRF、Gaussian Splatting 等表示如何进入机器人控制闭环？

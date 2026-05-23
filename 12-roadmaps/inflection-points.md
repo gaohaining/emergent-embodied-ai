@@ -1,4 +1,4 @@
-# Inflection Points
+# 拐点
 
 可能改变具身智能发展速度的拐点。
 

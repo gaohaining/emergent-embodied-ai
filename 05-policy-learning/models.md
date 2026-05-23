@@ -1,4 +1,4 @@
-# Models
+# 模型
 
 ## 关注方向
 
@@ -67,7 +67,7 @@
 - 泛化：跨任务、跨场景、跨物体、跨机器人本体。
 - 约束：延迟、算力、安全、可解释性。
 
-## Open Questions
+## 开放问题
 
 - VLA 会走向统一模型，还是保持高层模型加低层策略的组合？
 - WAM 会成为独立路线，还是被 VLA + world model 或 video foundation model 吸收？

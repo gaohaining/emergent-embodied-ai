@@ -1,4 +1,4 @@
-# Research Agenda
+# 研究议程
 
 ## 当前核心问题
 
@@ -15,12 +15,17 @@
 | VLA 路线 | 高 |  | 论文、开源项目、实机评测 | 建立主题综述 |
 | 机器人数据飞轮 | 高 |  | 数据集、遥操作方案、公司动态 | 建立数据地图 |
 | 世界模型 | 中高 |  | 视频生成、预测控制、机器人论文 | 跟踪关键论文 |
+| 3D 感知到可操作约束 | 高 |  | 6D pose、grounding、spatial constraints、抓取与操作接口 | 连接感知页与操作页 |
+| 双臂与灵巧操作基础模型 | 高 |  | 双臂数据、diffusion / flow foundation model、benchmark | 补双臂路线综述 |
+| 导航与移动操作 VLA | 中高 |  | object-goal navigation、legged VLA、移动操作系统 | 建立导航分支入口 |
 | 实机评测 | 高 |  | benchmark、部署案例 | 建立评测模板 |
 | 人形机器人 | 中高 |  | 产品、硬件、成本、任务 | 做案例比较 |
 
 ## 本月重点
 
-- 
+- 整理 VLA 之后的三条细分主线：空间表示、双臂基础模型、导航 VLA。
+- 把感知工具链（FoundationPose、Grounding DINO、Open3D）和操作论文连接起来。
+- 选 1-2 篇双臂或导航代表论文补成完整笔记。
 
 ## 暂缓问题
 

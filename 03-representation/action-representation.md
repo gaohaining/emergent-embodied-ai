@@ -1,4 +1,4 @@
-# Action Representation
+# 动作表示
 
 ## 动作表示是什么
 
@@ -21,7 +21,7 @@
 
 VLA 的关键问题之一就是：如何把视觉和语言条件转成可执行动作。不同 VLA 系统在动作表示上差异很大。
 
-## Open Questions
+## 开放问题
 
 - 动作 token 化会不会成为通用机器人策略的标准接口？
 - Flow matching 和 diffusion policy 更适合哪些动作空间？

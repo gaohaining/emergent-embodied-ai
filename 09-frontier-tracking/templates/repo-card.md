@@ -1,45 +1,45 @@
-# Repo Card: owner/name
+# 仓库卡片：owner/name
 
-## Metadata
+## 元信息
 
 - URL:
-- Type: survey index / project index / engineering repo / dataset / simulator / benchmark / model
-- Maintainer:
-- License:
-- Stars:
-- Last checked:
-- Status: active / slow / stale / unknown
+- 类型：综述索引 / 项目索引 / 工程仓库 / 数据集 / 仿真器 / 基准 / 模型
+- 维护者：
+- 许可证：
+- Star 数：
+- 最后复查：
+- 状态：活跃 / 更新较慢 / 停更 / 未知
 
-## Why It Matters
+## 为什么重要
 
 
-## Coverage
+## 覆盖范围
 
-- Models:
-- Data:
-- Simulation:
-- Hardware:
-- Evaluation:
-- Deployment:
+- 模型：
+- 数据：
+- 仿真：
+- 硬件：
+- 评测：
+- 部署：
 
-## What To Borrow
+## 可借鉴内容
 
-- Taxonomy:
-- Tracking fields:
-- Useful links:
-- Reading order:
-- Engineering patterns:
+- 分类体系：
+- 跟踪字段：
+- 有用链接：
+- 阅读顺序：
+- 工程模式：
 
-## Risks
+## 风险
 
-- Stale links:
-- Narrow scope:
-- Missing evidence:
-- Reproducibility issues:
+- 链接过期：
+- 范围过窄：
+- 证据缺失：
+- 复现问题：
 
-## Actions
+## 后续动作
 
-- Add to inbox:
-- Update topic page:
-- Create paper note:
-- Try locally:
+- 加入 inbox：
+- 更新主题页：
+- 创建论文笔记：
+- 本地试跑：

@@ -1,4 +1,4 @@
-# Skill Library
+# 技能库
 
 ## 它解决什么
 
@@ -37,7 +37,7 @@
 5. `place(cup, sink)`
 6. `verify(cup_in_sink)`
 
-## Open Questions
+## 开放问题
 
 - 技能边界如何定义？
 - 技能库如何自动扩展？

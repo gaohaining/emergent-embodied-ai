@@ -1,4 +1,4 @@
-# Emergent Embodied AI
+# Emergent Embodied AI（涌现式具身智能）
 
 Language: 中文 | [English](README.en.md)
 

@@ -1,46 +1,46 @@
-# Source Item: Title
+# 来源条目：标题
 
-## Metadata
+## 元信息
 
-- Date found:
-- Source type: code repository / community discussion / long-form article / search result / paper index / official site / other
+- 发现日期：
+- 来源类型：代码仓库 / 社区讨论 / 长文文章 / 搜索结果 / 论文索引 / 官方站点 / 其他
 - URL:
-- Author or organization:
-- Type: paper / repo / demo / opinion / tutorial / dataset / benchmark / product
-- Status: inbox / reading / summarized / integrated / stale
+- 作者或组织：
+- 类型：论文 / 仓库 / demo / 观点 / 教程 / 数据集 / 基准 / 产品
+- 状态：收件箱 / 阅读中 / 已总结 / 已整合 / 过期
 
-## Why It Matters
-
-
-## Which Technical Link
-
-- Perception:
-- Representation:
-- Data:
-- Policy learning:
-- Planning and control:
-- Simulation and evaluation:
-- Hardware and deployment:
-
-## Evidence
-
-- Paper:
-- Code:
-- Dataset:
-- Real robot result:
-- Benchmark:
-- Official source:
-
-## Beginner Explanation
+## 为什么重要
 
 
-## Caveats
+## 对应技术链路
+
+- 感知：
+- 表示：
+- 数据：
+- 策略学习：
+- 规划与控制：
+- 仿真与评测：
+- 硬件与部署：
+
+## 证据
+
+- 论文：
+- 代码：
+- 数据集：
+- 真实机器人结果：
+- 基准：
+- 官方来源：
+
+## 新手解释
 
 
-## Next Action
+## 注意事项
 
-- Add to papers:
-- Add to open-source:
-- Add to datasets and benchmarks:
-- Create case study:
-- Update technical page:
+
+## 下一步
+
+- 加入论文表：
+- 加入开源页：
+- 加入数据集与基准页：
+- 创建案例研究：
+- 更新技术页：

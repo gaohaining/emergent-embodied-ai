@@ -14,7 +14,7 @@
 
 - 模型类别：LLM + 技能库 / affordance grounding
 - 年份：2022
-- 链接：[arXiv](https://arxiv.org/abs/2204.01691), [Project](https://say-can.github.io/)
+- 链接：[arXiv](https://arxiv.org/abs/2204.01691), [项目页](https://say-can.github.io/)
 - 技术链接：06-planning-and-control / 05-policy-learning
 - 解决什么问题：大语言模型知道“任务应该怎么做”，但不知道当前机器人在当前环境里“能不能做”。
 - 方法：用 LLM 给候选自然语言技能打语义分数，用技能 value function 或 affordance score 约束可执行性，再选择下一步技能。
@@ -26,7 +26,7 @@
 
 - 模型类别：LLM + 闭环语言反馈
 - 年份：2022
-- 链接：[arXiv](https://arxiv.org/abs/2207.05608), [Project](https://innermonologue.github.io/)
+- 链接：[arXiv](https://arxiv.org/abs/2207.05608), [项目页](https://innermonologue.github.io/)
 - 技术链接：06-planning-and-control / 06-planning-and-control/failure-recovery.md
 - 解决什么问题：高层语言规划如果只开环生成动作序列，机器人执行中环境变化、技能失败和人类反馈都无法进入推理。
 - 方法：把成功检测、场景描述、人类交互等反馈转成语言上下文，让 LLM 在任务过程中持续更新计划。
@@ -38,7 +38,7 @@
 
 - 模型类别：LLM 生成策略代码
 - 年份：2022
-- 链接：[arXiv](https://arxiv.org/abs/2209.07753), [Project](https://code-as-policies.github.io/)
+- 链接：[arXiv](https://arxiv.org/abs/2209.07753), [项目页](https://code-as-policies.github.io/)
 - 技术链接：06-planning-and-control / 08-hardware-and-deployment
 - 解决什么问题：自然语言计划很难直接连接几何计算、控制 API 和第三方库。
 - 方法：用 few-shot prompt 让代码 LLM 生成 Python 策略程序，程序调用感知输出、几何库和控制 primitive；递归生成缺失函数。
@@ -86,7 +86,7 @@
 
 - 模型类别：VAM / Robotics Transformer
 - 年份：2022
-- 链接：[arXiv](https://arxiv.org/abs/2212.06817), [Project](https://robotics-transformer1.github.io/)
+- 链接：[arXiv](https://arxiv.org/abs/2212.06817), [项目页](https://robotics-transformer1.github.io/)
 - 技术链接：05-policy-learning / 04-data
 - 解决什么问题：机器人策略能否像视觉和语言模型一样，从大规模多任务真实数据中获得泛化。
 - 方法：用高容量 Transformer 吸收真实机器人多任务数据，把视觉和任务条件映射到离散动作 token。
@@ -122,7 +122,7 @@
 
 - 模型类别：VLA
 - 年份：2023
-- 链接：[arXiv](https://arxiv.org/abs/2307.15818), [Project](https://robotics-transformer.github.io/)
+- 链接：[arXiv](https://arxiv.org/abs/2307.15818), [项目页](https://robotics-transformer.github.io/)
 - 技术链接：05-policy-learning / 03-representation
 - 解决什么问题：如何让互联网规模 VLM 的语义知识直接改善机器人控制泛化。
 - 方法：把机器人动作表示成文本 token，与视觉问答等互联网视觉语言任务共同微调 VLM。
@@ -134,7 +134,7 @@
 
 - 模型类别：VLA / open-source VLA
 - 年份：2024
-- 链接：[arXiv](https://arxiv.org/abs/2406.09246), [Project](https://openvla.github.io/)
+- 链接：[arXiv](https://arxiv.org/abs/2406.09246), [项目页](https://openvla.github.io/)
 - 技术链接：05-policy-learning / 09-frontier-tracking/open-source.md
 - 解决什么问题：VLA 如果大多闭源，研究者难以复现、微调和比较。
 - 方法：7B 参数模型，Llama 2 语言模型 + DINOv2/SigLIP 视觉特征，在 970k 真实机器人示范上训练。
@@ -146,7 +146,7 @@
 
 - 模型类别：generalist robot policy / VLA 邻近
 - 年份：2024
-- 链接：[arXiv](https://arxiv.org/abs/2405.12213), [Project](https://octo-models.github.io/)
+- 链接：[arXiv](https://arxiv.org/abs/2405.12213), [项目页](https://octo-models.github.io/)
 - 技术链接：05-policy-learning / 04-data / 10-case-studies
 - 解决什么问题：通用机器人策略需要适配不同传感器、动作空间、机器人平台和任务条件。
 - 方法：在 Open X-Embodiment 的 800k 轨迹上训练大 Transformer，可用语言或目标图像指令，并可在新平台上微调。
@@ -158,7 +158,7 @@
 
 - 模型类别：VLA + Flow Policy
 - 年份：2024 / RSS 2025
-- 链接：[arXiv](https://arxiv.org/abs/2410.24164), [Project](https://www.physicalintelligence.company/blog/pi0)
+- 链接：[arXiv](https://arxiv.org/abs/2410.24164), [项目页](https://www.physicalintelligence.company/blog/pi0)
 - 技术链接：05-policy-learning / 10-case-studies
 - 解决什么问题：通用机器人策略需要同时继承 VLM 语义知识，又能生成高频连续灵巧动作。
 - 方法：在预训练 VLM 之上构建 flow matching 动作生成架构，使用多平台灵巧操作数据训练。
@@ -230,7 +230,7 @@
 
 - 模型类别：WAM / DreamZero
 - 年份：2026
-- 链接：[arXiv](https://arxiv.org/abs/2602.15922), [Project](https://dreamzero0.github.io/)
+- 链接：[arXiv](https://arxiv.org/abs/2602.15922), [项目页](https://dreamzero0.github.io/)
 - 技术链接：05-policy-learning / 03-representation
 - 解决什么问题：VLA 擅长语义泛化，但对新环境中的未见物理运动泛化不足。
 - 方法：基于预训练视频扩散 backbone 构建 WAM，联合建模未来视频状态和动作，用视频作为世界演化的密集表征。
@@ -266,7 +266,7 @@
 
 - 模型类别：Diffusion Policy
 - 年份：2023 / journal version 2024
-- 链接：[arXiv](https://arxiv.org/abs/2303.04137), [Project](https://diffusion-policy.cs.columbia.edu/)
+- 链接：[arXiv](https://arxiv.org/abs/2303.04137), [项目页](https://diffusion-policy.cs.columbia.edu/)
 - 技术链接：05-policy-learning / 03-representation/action-representation.md
 - 解决什么问题：机器人动作分布常是多模态、高维且连续的，传统回归策略容易平均化或不稳定。
 - 方法：把视觉运动策略表示为条件去噪扩散过程，结合 receding horizon control、视觉条件和 time-series diffusion transformer。
@@ -302,7 +302,7 @@
 
 - 模型类别：ACT / Action Chunking Transformer
 - 年份：2023
-- 链接：[arXiv](https://arxiv.org/abs/2304.13705), [Project](https://tonyzhaozh.github.io/aloha/)
+- 链接：[arXiv](https://arxiv.org/abs/2304.13705), [项目页](https://tonyzhaozh.github.io/aloha/)
 - 技术链接：05-policy-learning / 08-hardware-and-deployment/dexterous-hands.md
 - 解决什么问题：低成本、非高精度硬件如何通过学习完成细粒度双臂操作。
 - 方法：用自制遥操作接口采集真实示范，ACT 一次生成动作序列块，缓解逐步误差累积和示范非平稳性。

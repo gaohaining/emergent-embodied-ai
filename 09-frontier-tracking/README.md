@@ -1,4 +1,4 @@
-# 09 Frontier Tracking
+# 09 前沿跟踪
 
 这个目录用于持续跟踪前沿动态。
 
@@ -6,6 +6,7 @@
 
 - [inbox.md](inbox.md)：临时收集所有新材料。
 - [papers.md](papers.md)：论文跟踪表。
+- [paper-notes/](paper-notes/)：精选论文精读笔记。
 - [model-paper-notes.md](model-paper-notes.md)：模型谱系代表论文笔记（LLM/VLM/VAM/VLA/World Model/WAM/动作生成头）。
 - [tooling-and-system-stack.md](tooling-and-system-stack.md)：具身工程常用工具链与系统栈（感知、标定、规划、仿真）。
 - [community-insights.md](community-insights.md)：技术社区精彩文章（知乎、Medium、机器之心等）。
