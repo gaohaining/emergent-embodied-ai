@@ -32,7 +32,7 @@
 
 ## Phase 2.5: VLA 专题阅读
 
-参考 [../09-frontier-tracking/repo-watchlist.md](../09-frontier-tracking/repo-watchlist.md) 中的 VLA 和 Physical AI 仓库，按以下顺序读：
+按论文和官方项目页的顺序，建议这样读：
 
 1. VLM 和视觉表征基础：CLIP、SigLIP、DINOv2、R3M。
 2. 机器人策略基础：行为克隆、diffusion policy、ACT、RT-1。

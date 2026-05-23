@@ -24,7 +24,10 @@
 | 本体感知 | Proprioception | 机器人对自身关节、速度、末端状态等内部状态的感知。 | [tactile-and-proprioception](../02-perception/tactile-and-proprioception.md) |
 | Benchmark | Benchmark | 用于比较方法的标准任务、数据集或评测协议。 | [benchmark-design](../07-simulation-and-evaluation/benchmark-design.md) |
 | 视觉语言模型 | Vision-Language Model, VLM | 同时处理视觉和语言输入的模型。 | [multimodal-understanding](../02-perception/multimodal-understanding.md) |
+| 视觉动作模型 | Vision-Action Model, VAM | 从视觉观察直接预测动作或轨迹的模型，通常不把自然语言作为核心输入。 | [models](../05-policy-learning/models.md) |
+| 世界动作模型 | World-Action Model, WAM | 将世界动态预测和动作生成耦合起来的模型路线，概念仍在演化中，常位于世界模型和 VLA 之间。 | [models](../05-policy-learning/models.md) |
 | Action Chunking | Action Chunking | 一次预测一段动作序列，而不是单步动作。 | [act](../05-policy-learning/act.md) |
+| 动作分词 | Action Tokenization | 把连续动作或动作序列压缩成离散 token，便于 Transformer 或 VLA 建模。 | [action-representation](../03-representation/action-representation.md) |
 | 跨本体学习 | Cross-Embodiment Learning | 在不同机器人身体和动作空间之间复用经验。 | [cross-embodiment-learning](../05-policy-learning/cross-embodiment-learning.md) |
 | 离线强化学习 | Offline Reinforcement Learning | 从固定数据集学习策略，减少在线试错。 | [offline-rl](../05-policy-learning/offline-rl.md) |
 | 层级策略 | Hierarchical Policy | 把高层任务决策和低层动作控制分开。 | [hierarchical-policy](../05-policy-learning/hierarchical-policy.md) |
@@ -34,8 +37,4 @@
 
 ## 待补术语
 
-- Diffusion Policy
-- Offline RL
 - Contact-Rich Manipulation
-- Action Tokenization
-- World-Action Model

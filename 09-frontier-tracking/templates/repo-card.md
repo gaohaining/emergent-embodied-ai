@@ -3,7 +3,7 @@
 ## Metadata
 
 - URL:
-- Type: awesome list / paper list / engineering repo / dataset / simulator / benchmark / model
+- Type: survey index / project index / engineering repo / dataset / simulator / benchmark / model
 - Maintainer:
 - License:
 - Stars:
