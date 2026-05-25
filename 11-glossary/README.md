@@ -17,6 +17,18 @@
 | 遥操作 | Teleoperation | 人类远程控制机器人完成任务并记录训练数据。 | [teleoperation](../04-data/teleoperation.md) |
 | 扩散策略 | Diffusion Policy | 用扩散生成模型生成动作序列的机器人策略方法。 | [diffusion-policy](../05-policy-learning/diffusion-policy.md) |
 | 任务规划 | Task Planning | 把高层目标拆成可执行子任务。 | [task-planning](../06-planning-and-control/task-planning.md) |
+| 运动学 | Robot Kinematics | 描述机器人关节、连杆和末端执行器之间几何关系的方法，不直接处理力和质量。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 正向运动学 / 正解 | Forward Kinematics, FK | 已知机器人关节状态，计算末端执行器的位置和朝向。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 逆向运动学 / 逆解 | Inverse Kinematics, IK | 已知目标末端位姿，求一组可行关节状态。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 自由度 | Degree of Freedom, DoF | 机器人可以独立运动的维度，一个旋转关节通常对应 1 个自由度。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 末端执行器 | End Effector | 机器人真正执行任务的末端工具，例如夹爪、吸盘或焊枪。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 位姿 | Pose | 位置和朝向的组合，用来描述物体、相机或末端执行器在空间中的状态。 | [spatial-representation](../03-representation/spatial-representation.md), [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 关节空间 | Joint Space | 用每个关节的位置或速度描述机器人状态的空间。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 笛卡尔空间 | Cartesian Space | 用真实空间中的位置和朝向描述目标的空间。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 机器人模型 | Robot Model | 描述机器人连杆、关节、坐标系、限制和碰撞几何的结构信息。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| URDF | Unified Robot Description Format | ROS 生态中常见的机器人结构描述格式，用于记录连杆、关节、坐标系和碰撞几何。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 雅可比矩阵 | Jacobian | 描述关节小变化如何影响末端位置或速度的数学对象。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
+| 奇异点 | Singularity | 机器人在某些姿态下失去部分可控方向，或需要极大关节速度才能产生末端运动的状态。 | [robot-kinematics-basics](../06-planning-and-control/robot-kinematics-basics.md) |
 | 运动规划 | Motion Planning | 计算机器人从当前位置到目标位置的安全路径或轨迹。 | [motion-planning](../06-planning-and-control/motion-planning.md) |
 | 技能库 | Skill Library | 可复用机器人技能的集合，例如抓取、放置、导航。 | [skill-library](../06-planning-and-control/skill-library.md) |
 | 失败恢复 | Failure Recovery | 发现动作失败、定位原因并重新回到可执行状态。 | [failure-recovery](../06-planning-and-control/failure-recovery.md) |
@@ -34,6 +46,12 @@
 | Flow Policy | Flow Policy | 使用 flow matching 等连续生成过程生成机器人动作。 | [flow-policy](../05-policy-learning/flow-policy.md) |
 | 灵巧操作 | Dexterous Manipulation | 涉及多指、触觉和复杂接触的精细操作。 | [dexterous-hands](../08-hardware-and-deployment/dexterous-hands.md) |
 | 本体 | Embodiment | 智能系统的身体形态、传感器、动作空间和物理约束。 | [cross-embodiment-learning](../05-policy-learning/cross-embodiment-learning.md) |
+| 电机 | Motor | 将电能转换为机械运动的执行部件，是机器人关节、轮子、夹爪和底盘的动力来源。 | [motor-basics](../08-hardware-and-deployment/motor-basics.md) |
+| 无刷直流电机 | Brushless DC Motor, BLDC | 通过电子换相驱动的直流电机，常用于机器人关节、轮毂和高功率密度执行机构。 | [motor-basics](../08-hardware-and-deployment/motor-basics.md) |
+| 力矩 | Torque | 使物体绕轴旋转的作用量，机器人关节输出能力通常用力矩描述。 | [motor-basics](../08-hardware-and-deployment/motor-basics.md) |
+| 编码器 | Encoder | 测量电机或关节位置、速度的传感器，是闭环控制和状态观测的重要来源。 | [motor-basics](../08-hardware-and-deployment/motor-basics.md) |
+| 减速器 | Gearbox / Reducer | 通过降低转速来放大输出力矩的机械传动部件，同时可能引入背隙、摩擦和效率损失。 | [motor-basics](../08-hardware-and-deployment/motor-basics.md) |
+| 磁场定向控制 | Field-Oriented Control, FOC | BLDC/PMSM 中常用的电流控制方法，用于更平滑、高效地产生力矩。 | [motor-basics](../08-hardware-and-deployment/motor-basics.md) |
 
 ## 待补术语
 

@@ -1,10 +1,11 @@
-# 06 Planning And Control
+# 06 规划与控制
 
 规划与控制解决的问题是：如何把目标变成机器人可以执行的动作序列。
 
 ## 先读
 
 - [cognition-and-control.md](cognition-and-control.md)：认知、控制和行动闭环。
+- [robot-kinematics-basics.md](robot-kinematics-basics.md)：机器人运动学基础，面向 0 基础解释正解、逆解、坐标系和关节空间，附 [HTML 可视化演示](robot-kinematics-basics-demo.html)。
 - [task-planning.md](task-planning.md)：任务规划。
 - [motion-planning.md](motion-planning.md)：运动规划。
 - [skill-library.md](skill-library.md)：技能库。
@@ -13,6 +14,7 @@
 ## 分层理解
 
 - 任务规划：先做什么，后做什么。
+- 运动学：关节角度和末端位姿如何互相转换。
 - 运动规划：如何避障并到达目标位姿。
 - 技能选择：调用抓取、放置、导航、开门等技能。
 - 低层控制：控制电机、关节、末端执行器。

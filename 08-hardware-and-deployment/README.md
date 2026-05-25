@@ -9,13 +9,15 @@
 3. [safety-and-operations.md](safety-and-operations.md)：安全、监控和运维检查清单。
 4. [robot-platforms.md](robot-platforms.md)：机器人形态和平台选择。
 5. [sensors.md](sensors.md)：传感器栈。
-6. [humanoid-robots.md](humanoid-robots.md)：人形机器人。
-7. [dexterous-hands.md](dexterous-hands.md)：灵巧手和灵巧操作。
+6. [motor-basics.md](motor-basics.md)：电机、驱动器、减速器和底层执行能力。
+7. [humanoid-robots.md](humanoid-robots.md)：人形机器人。
+8. [dexterous-hands.md](dexterous-hands.md)：灵巧手和灵巧操作。
 
 ## 硬件影响什么
 
 - 能做什么动作。
 - 能承受多大负载。
+- 能输出多大力矩、速度和控制带宽。
 - 感知是否足够可靠。
 - 数据采集成本。
 - 策略是否能跨平台迁移。

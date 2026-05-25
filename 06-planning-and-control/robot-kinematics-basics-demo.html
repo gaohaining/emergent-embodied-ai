@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>机器人运动学基础演示：FK 与 IK</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f4;
+      --panel: #ffffff;
+      --ink: #1f2933;
+      --muted: #697586;
+      --line: #d8ded8;
+      --accent: #0f766e;
+      --accent-2: #b45309;
+      --danger: #b42318;
+      --grid: #e9ede9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1500px, calc(100vw - 24px));
+      margin: 0 auto;
+      padding: 18px 0 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(480px, 1fr) minmax(560px, 1fr);
+      gap: 14px;
+      align-items: start;
+      margin-top: 14px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .canvas-wrap {
+      min-height: auto;
+      position: sticky;
+      top: 16px;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: clamp(420px, 58vh, 560px);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fbfcfb;
+      cursor: crosshair;
+      touch-action: none;
+    }
+
+    .controls {
+      display: grid;
+      gap: 12px;
+    }
+
+    .control {
+      display: grid;
+      gap: 6px;
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--ink);
+      font-weight: 650;
+      font-size: 14px;
+    }
+
+    output {
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+
+    button {
+      border: 1px solid #0d9488;
+      background: var(--accent);
+      color: white;
+      min-height: 40px;
+      border-radius: 6px;
+      padding: 0 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      border-color: var(--line);
+      background: #ffffff;
+      color: var(--ink);
+    }
+
+    .readout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px;
+      background: #fcfcfa;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .metric span {
+      font-variant-numeric: tabular-nums;
+      font-weight: 750;
+    }
+
+    .note {
+      border-left: 4px solid var(--accent);
+      padding: 8px 10px;
+      background: #ecfdf5;
+      border-radius: 4px;
+      color: #134e4a;
+      margin-top: 10px;
+    }
+
+    .warn {
+      border-left-color: var(--danger);
+      background: #fff1f0;
+      color: #7a271a;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      margin-right: 5px;
+      vertical-align: -1px;
+      background: var(--accent);
+    }
+
+    .dot.orange {
+      background: var(--accent-2);
+    }
+
+    .dot.gray {
+      background: #98a2b3;
+    }
+
+    .steps {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .steps li {
+      margin: 4px 0;
+    }
+
+    .formula {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 10px;
+      background: #fcfcfa;
+      margin-top: 12px;
+    }
+
+    .formula h3 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .formula code {
+      display: block;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      color: #344054;
+      background: #f3f5f2;
+      border-radius: 4px;
+      padding: 8px;
+      font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .formula .calc {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .formula .calc strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 1060px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .canvas-wrap {
+        position: static;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .canvas-wrap {
+        min-height: auto;
+      }
+
+      canvas {
+        height: 430px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>机器人运动学基础演示：正解 FK 与逆解 IK</h1>
+    <p>
+      这个小演示用二维两连杆机械臂解释基础直觉：正解是“关节角度 -> 末端位置”，逆解是“目标位置 -> 关节角度”。
+      它不是工业级求解器，只用来帮助理解正文里的概念。
+    </p>
+
+    <section class="layout">
+      <div class="panel canvas-wrap">
+        <h2>机械臂视图</h2>
+        <canvas id="arm" width="760" height="520" aria-label="二维机械臂运动学演示"></canvas>
+        <div class="legend">
+          <span><i class="dot"></i>当前机械臂</span>
+          <span><i class="dot orange"></i>IK 目标</span>
+          <span><i class="dot gray"></i>另一个可能逆解</span>
+        </div>
+        <div id="message" class="note"></div>
+      </div>
+
+      <div class="two-column">
+        <section class="panel">
+          <h2>1. 正解：调关节，看末端</h2>
+          <p>滑动肩关节和肘关节，或直接拖动画布里的肘关节/末端控制点。你给的是关节空间里的角度，系统算出末端在平面中的 x/y 位置。</p>
+
+          <div class="controls">
+            <div class="control">
+              <label for="shoulder">肩关节角度 <output id="shoulderOut"></output></label>
+              <input id="shoulder" type="range" min="-170" max="170" value="35">
+            </div>
+            <div class="control">
+              <label for="elbow">肘关节角度 <output id="elbowOut"></output></label>
+              <input id="elbow" type="range" min="-170" max="170" value="65">
+            </div>
+          </div>
+
+          <div class="readout">
+            <div class="metric"><strong>末端 x</strong><span id="endX"></span></div>
+            <div class="metric"><strong>末端 y</strong><span id="endY"></span></div>
+            <div class="metric"><strong>第一段长度</strong><span>1.00</span></div>
+            <div class="metric"><strong>第二段长度</strong><span>0.75</span></div>
+          </div>
+
+          <div class="formula" aria-live="polite">
+            <h3>正解 FK 公式</h3>
+            <code>x = L1 cos(θ1) + L2 cos(θ1 + θ2)
+y = L1 sin(θ1) + L2 sin(θ1 + θ2)</code>
+            <div id="fkCalc" class="calc"></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>2. 逆解：设目标，看关节</h2>
+          <p>可以拖动画布里的橙色目标点，也可以用下面的滑杆精确设置。目标会被限制在可达圆环内。</p>
+
+          <div class="controls">
+            <div class="control">
+              <label for="targetX">目标 x <output id="targetXOut"></output></label>
+              <input id="targetX" type="range" min="-1.75" max="1.75" step="0.001" value="1.0">
+            </div>
+            <div class="control">
+              <label for="targetY">目标 y <output id="targetYOut"></output></label>
+              <input id="targetY" type="range" min="-1.75" max="1.75" step="0.001" value="0.65">
+            </div>
+            <button id="solve">用 IK 求一组关节角</button>
+            <button id="reset" class="secondary">重置示例</button>
+          </div>
+
+          <div class="formula" aria-live="polite">
+            <h3>逆解 IK 公式</h3>
+            <code>d² = x² + y²
+cos(θ2) = (d² - L1² - L2²) / (2 L1 L2)
+θ1 = atan2(y, x) - atan2(L2 sin(θ2), L1 + L2 cos(θ2))</code>
+            <div id="ikCalc" class="calc"></div>
+          </div>
+
+          <ol class="steps">
+            <li>拖绿色肘关节点：主要改变肩关节角度。</li>
+            <li>拖绿色末端点：改变肘关节角度，并保持第二段连杆长度。</li>
+            <li>拖橙色十字：改变 IK 目标。</li>
+            <li>灰色手臂表示另一个可能解，说明 IK 可能有多解。</li>
+          </ol>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const canvas = document.getElementById("arm");
+    const ctx = canvas.getContext("2d");
+    const shoulder = document.getElementById("shoulder");
+    const elbow = document.getElementById("elbow");
+    const targetX = document.getElementById("targetX");
+    const targetY = document.getElementById("targetY");
+    const shoulderOut = document.getElementById("shoulderOut");
+    const elbowOut = document.getElementById("elbowOut");
+    const targetXOut = document.getElementById("targetXOut");
+    const targetYOut = document.getElementById("targetYOut");
+    const endX = document.getElementById("endX");
+    const endY = document.getElementById("endY");
+    const message = document.getElementById("message");
+    const fkCalc = document.getElementById("fkCalc");
+    const ikCalc = document.getElementById("ikCalc");
+
+    const link1 = 1.0;
+    const link2 = 0.75;
+    let scale = 150;
+    let origin = { x: canvas.width / 2, y: canvas.height / 2 + 70 };
+
+    let ghost = null;
+    let dragMode = null;
+
+    function rad(deg) {
+      return deg * Math.PI / 180;
+    }
+
+    function deg(radValue) {
+      return radValue * 180 / Math.PI;
+    }
+
+    function worldToCanvas(point) {
+      return {
+        x: origin.x + point.x * scale,
+        y: origin.y - point.y * scale
+      };
+    }
+
+    function canvasToWorld(point) {
+      return {
+        x: (point.x - origin.x) / scale,
+        y: (origin.y - point.y) / scale
+      };
+    }
+
+    function getCanvasPoint(event) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: (event.clientX - rect.left) * (canvas.width / rect.width),
+        y: (event.clientY - rect.top) * (canvas.height / rect.height)
+      };
+    }
+
+    function resizeCanvasToDisplaySize() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const width = Math.round(rect.width * dpr);
+      const height = Math.round(rect.height * dpr);
+
+      if (canvas.width !== width || canvas.height !== height) {
+        canvas.width = width;
+        canvas.height = height;
+      }
+
+      scale = Math.min(canvas.width / 4.2, canvas.height / 4.0);
+      origin = {
+        x: canvas.width / 2,
+        y: canvas.height / 2 + scale * 0.18
+      };
+    }
+
+    function clamp(value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    }
+
+    function setTargetFromCanvas(event) {
+      setTargetPoint(canvasToWorld(getCanvasPoint(event)));
+      ghost = null;
+      update();
+    }
+
+    function setTargetPoint(point) {
+      const maxReach = link1 + link2;
+      const minReach = Math.abs(link1 - link2);
+      const distanceFromBase = Math.hypot(point.x, point.y);
+      let scaleToCircle = 1;
+      let direction = { ...point };
+
+      if (distanceFromBase === 0) {
+        direction = {
+          x: Number(targetX.value) || 1,
+          y: Number(targetY.value) || 0
+        };
+      }
+
+      const directionLength = Math.hypot(direction.x, direction.y) || 1;
+
+      if (distanceFromBase > maxReach) {
+        scaleToCircle = maxReach / distanceFromBase;
+      } else if (distanceFromBase < minReach) {
+        scaleToCircle = minReach / directionLength;
+        point = direction;
+      }
+
+      const constrained = {
+        x: point.x * scaleToCircle,
+        y: point.y * scaleToCircle
+      };
+      targetX.value = clamp(constrained.x, Number(targetX.min), Number(targetX.max)).toFixed(3);
+      targetY.value = clamp(constrained.y, Number(targetY.min), Number(targetY.max)).toFixed(3);
+    }
+
+    function constrainTargetInputs() {
+      setTargetPoint({
+        x: Number(targetX.value),
+        y: Number(targetY.value)
+      });
+    }
+
+    function normalizeDeg(value) {
+      let result = value;
+      while (result > 180) result -= 360;
+      while (result <= -180) result += 360;
+      return result;
+    }
+
+    function distance(a, b) {
+      return Math.hypot(a.x - b.x, a.y - b.y);
+    }
+
+    function currentHandlePositions() {
+      const points = fk(Number(shoulder.value), Number(elbow.value));
+      return {
+        base: worldToCanvas({ x: 0, y: 0 }),
+        elbow: worldToCanvas(points.elbowPoint),
+        end: worldToCanvas(points.endPoint)
+      };
+    }
+
+    function nearestDragMode(event) {
+      const point = getCanvasPoint(event);
+      const handles = currentHandlePositions();
+      const endDistance = distance(point, handles.end);
+      const elbowDistance = distance(point, handles.elbow);
+      const targetDistance = distance(point, worldToCanvas({
+        x: Number(targetX.value),
+        y: Number(targetY.value)
+      }));
+
+      const grabRadius = 26;
+      if (endDistance <= grabRadius && endDistance <= elbowDistance) return "end";
+      if (elbowDistance <= grabRadius) return "elbow";
+      if (targetDistance <= grabRadius) return "target";
+      return "target";
+    }
+
+    function setElbowFromCanvas(event) {
+      const point = canvasToWorld(getCanvasPoint(event));
+      const angle = deg(Math.atan2(point.y, point.x));
+      shoulder.value = clamp(normalizeDeg(angle), Number(shoulder.min), Number(shoulder.max)).toFixed(0);
+      ghost = null;
+      update();
+    }
+
+    function setEndFromCanvas(event) {
+      const point = canvasToWorld(getCanvasPoint(event));
+      const a1 = rad(Number(shoulder.value));
+      const elbowWorld = {
+        x: link1 * Math.cos(a1),
+        y: link1 * Math.sin(a1)
+      };
+      const desired = Math.atan2(point.y - elbowWorld.y, point.x - elbowWorld.x);
+      const elbowAngle = normalizeDeg(deg(desired - a1));
+      elbow.value = clamp(elbowAngle, Number(elbow.min), Number(elbow.max)).toFixed(0);
+      ghost = null;
+      update();
+    }
+
+    function applyDrag(event) {
+      if (dragMode === "elbow") {
+        setElbowFromCanvas(event);
+      } else if (dragMode === "end") {
+        setEndFromCanvas(event);
+      } else {
+        setTargetFromCanvas(event);
+      }
+    }
+
+    function fk(a1Deg, a2Deg) {
+      const a1 = rad(a1Deg);
+      const a2 = rad(a2Deg);
+      const elbowPoint = {
+        x: link1 * Math.cos(a1),
+        y: link1 * Math.sin(a1)
+      };
+      const endPoint = {
+        x: elbowPoint.x + link2 * Math.cos(a1 + a2),
+        y: elbowPoint.y + link2 * Math.sin(a1 + a2)
+      };
+      return { elbowPoint, endPoint };
+    }
+
+    function ik(x, y, elbowSign) {
+      const d2 = x * x + y * y;
+      const maxReach = link1 + link2;
+      const minReach = Math.abs(link1 - link2);
+      const d = Math.sqrt(d2);
+      const epsilon = 1e-6;
+
+      if (d > maxReach + epsilon || d < minReach - epsilon) {
+        return null;
+      }
+
+      const cosElbow = (d2 - link1 * link1 - link2 * link2) / (2 * link1 * link2);
+      const clamped = Math.max(-1, Math.min(1, cosElbow));
+      const elbowAngle = elbowSign * Math.acos(clamped);
+      const k1 = link1 + link2 * Math.cos(elbowAngle);
+      const k2 = link2 * Math.sin(elbowAngle);
+      const shoulderAngle = Math.atan2(y, x) - Math.atan2(k2, k1);
+      return {
+        shoulder: deg(shoulderAngle),
+        elbow: deg(elbowAngle)
+      };
+    }
+
+    function ikDetails(x, y) {
+      const d2 = x * x + y * y;
+      const d = Math.sqrt(d2);
+      const rawCos = (d2 - link1 * link1 - link2 * link2) / (2 * link1 * link2);
+      const cosElbow = Math.max(-1, Math.min(1, rawCos));
+      const up = ik(x, y, 1);
+      const down = ik(x, y, -1);
+      return { d2, d, rawCos, cosElbow, up, down };
+    }
+
+    function formatNumber(value, digits = 3) {
+      if (!Number.isFinite(value)) return "不可用";
+      return value.toFixed(digits);
+    }
+
+    function updateFormulaReadout(a1, a2, end, tx, ty) {
+      const a1Rad = rad(a1);
+      const a2Rad = rad(a2);
+      const thetaSum = a1 + a2;
+      fkCalc.innerHTML = `
+        <strong>当前代入：</strong>
+        L1=${formatNumber(link1, 2)}, L2=${formatNumber(link2, 2)}, θ1=${formatNumber(a1, 0)}°, θ2=${formatNumber(a2, 0)}°<br>
+        x = ${formatNumber(link1, 2)} cos(${formatNumber(a1, 0)}°) + ${formatNumber(link2, 2)} cos(${formatNumber(thetaSum, 0)}°) = <strong>${formatNumber(end.x)}</strong><br>
+        y = ${formatNumber(link1, 2)} sin(${formatNumber(a1, 0)}°) + ${formatNumber(link2, 2)} sin(${formatNumber(thetaSum, 0)}°) = <strong>${formatNumber(end.y)}</strong><br>
+        弧度值：θ1=${formatNumber(a1Rad)}, θ2=${formatNumber(a2Rad)}
+      `;
+
+      const details = ikDetails(tx, ty);
+      const up = details.up
+        ? `解 A：θ1=${formatNumber(details.up.shoulder, 1)}°, θ2=${formatNumber(details.up.elbow, 1)}°`
+        : "解 A：无解";
+      const down = details.down
+        ? `解 B：θ1=${formatNumber(details.down.shoulder, 1)}°, θ2=${formatNumber(details.down.elbow, 1)}°`
+        : "解 B：无解";
+      ikCalc.innerHTML = `
+        <strong>当前目标：</strong>
+        x=${formatNumber(tx)}, y=${formatNumber(ty)}, d=${formatNumber(details.d)}<br>
+        d² = ${formatNumber(tx)}² + ${formatNumber(ty)}² = <strong>${formatNumber(details.d2)}</strong><br>
+        cos(θ2) = (${formatNumber(details.d2)} - ${formatNumber(link1 * link1, 2)} - ${formatNumber(link2 * link2, 2)}) / (2·${formatNumber(link1, 2)}·${formatNumber(link2, 2)}) = <strong>${formatNumber(details.cosElbow)}</strong><br>
+        ${up}<br>
+        ${down}
+      `;
+    }
+
+    function drawGrid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = "#e9ede9";
+      ctx.lineWidth = 1;
+
+      for (let x = origin.x % 50; x < canvas.width; x += 50) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+
+      for (let y = origin.y % 50; y < canvas.height; y += 50) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+
+      ctx.strokeStyle = "#cdd5cf";
+      ctx.beginPath();
+      ctx.moveTo(0, origin.y);
+      ctx.lineTo(canvas.width, origin.y);
+      ctx.moveTo(origin.x, 0);
+      ctx.lineTo(origin.x, canvas.height);
+      ctx.stroke();
+
+      ctx.strokeStyle = "#d7ded7";
+      ctx.setLineDash([8, 8]);
+      ctx.beginPath();
+      ctx.arc(origin.x, origin.y, (link1 + link2) * scale, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(origin.x, origin.y, Math.abs(link1 - link2) * scale, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    function drawArm(a1, a2, color, width, alpha = 1) {
+      const points = fk(a1, a2);
+      const base = worldToCanvas({ x: 0, y: 0 });
+      const elbowPoint = worldToCanvas(points.elbowPoint);
+      const endPoint = worldToCanvas(points.endPoint);
+
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = width;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.beginPath();
+      ctx.moveTo(base.x, base.y);
+      ctx.lineTo(elbowPoint.x, elbowPoint.y);
+      ctx.lineTo(endPoint.x, endPoint.y);
+      ctx.stroke();
+
+      for (const p of [base, elbowPoint, endPoint]) {
+        ctx.fillStyle = "#ffffff";
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 8, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+      }
+
+      ctx.restore();
+
+      return points.endPoint;
+    }
+
+    function drawTarget() {
+      const target = worldToCanvas({
+        x: Number(targetX.value),
+        y: Number(targetY.value)
+      });
+      ctx.save();
+      ctx.fillStyle = "rgba(180, 83, 9, 0.10)";
+      ctx.beginPath();
+      ctx.arc(target.x, target.y, 24, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "#b45309";
+      ctx.beginPath();
+      ctx.arc(target.x, target.y, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "#92400e";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(target.x - 14, target.y);
+      ctx.lineTo(target.x + 14, target.y);
+      ctx.moveTo(target.x, target.y - 14);
+      ctx.lineTo(target.x, target.y + 14);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    function update() {
+      resizeCanvasToDisplaySize();
+      const a1 = Number(shoulder.value);
+      const a2 = Number(elbow.value);
+      const tx = Number(targetX.value);
+      const ty = Number(targetY.value);
+
+      shoulderOut.textContent = `${a1.toFixed(0)} 度`;
+      elbowOut.textContent = `${a2.toFixed(0)} 度`;
+      targetXOut.textContent = tx.toFixed(2);
+      targetYOut.textContent = ty.toFixed(2);
+
+      drawGrid();
+      drawTarget();
+
+      if (ghost) {
+        drawArm(ghost.shoulder, ghost.elbow, "#98a2b3", 5, 0.55);
+      }
+
+      const end = drawArm(a1, a2, "#0f766e", 8);
+      endX.textContent = end.x.toFixed(3);
+      endY.textContent = end.y.toFixed(3);
+      updateFormulaReadout(a1, a2, end, tx, ty);
+
+      const d = Math.hypot(tx, ty);
+      const minReach = Math.abs(link1 - link2);
+      const maxReach = link1 + link2;
+      const epsilon = 1e-6;
+      const reachable = d <= maxReach + epsilon && d >= minReach - epsilon;
+      message.className = reachable ? "note" : "note warn";
+      message.textContent = reachable
+        ? "可拖动绿色肘关节或末端来理解 FK；也可以拖动橙色目标点，再点击 IK 求解。橙色目标会被限制在可达圆环内。"
+        : "当前目标不在可达圆环内；继续拖动时会自动贴到最近的可达边界。";
+    }
+
+    canvas.addEventListener("pointerdown", (event) => {
+      dragMode = nearestDragMode(event);
+      canvas.setPointerCapture(event.pointerId);
+      applyDrag(event);
+    });
+
+    canvas.addEventListener("pointermove", (event) => {
+      if (!dragMode) return;
+      applyDrag(event);
+    });
+
+    canvas.addEventListener("pointerup", (event) => {
+      dragMode = null;
+      canvas.releasePointerCapture(event.pointerId);
+    });
+
+    canvas.addEventListener("pointercancel", (event) => {
+      dragMode = null;
+      canvas.releasePointerCapture(event.pointerId);
+    });
+
+    document.getElementById("solve").addEventListener("click", () => {
+      const tx = Number(targetX.value);
+      const ty = Number(targetY.value);
+      const solution = ik(tx, ty, 1);
+      const other = ik(tx, ty, -1);
+
+      if (!solution) {
+        ghost = null;
+        update();
+        return;
+      }
+
+      shoulder.value = Math.max(-170, Math.min(170, solution.shoulder));
+      elbow.value = Math.max(-170, Math.min(170, solution.elbow));
+      ghost = other;
+      update();
+    });
+
+    document.getElementById("reset").addEventListener("click", () => {
+      shoulder.value = 35;
+      elbow.value = 65;
+      targetX.value = 1.0;
+      targetY.value = 0.65;
+      ghost = null;
+      update();
+    });
+
+    for (const el of [shoulder, elbow]) {
+      el.addEventListener("input", update);
+    }
+
+    for (const el of [targetX, targetY]) {
+      el.addEventListener("input", () => {
+        constrainTargetInputs();
+        ghost = null;
+        update();
+      });
+    }
+
+    window.addEventListener("resize", update);
+
+    constrainTargetInputs();
+    update();
+  </script>
+</body>
+</html>
