@@ -1,5 +1,7 @@
 # 路线图
 
+机器人策略模型的详细演进路线见 [strategy-model-route.md](strategy-model-route.md)。该页面按“从观察和目标生成动作”的系统接口组织，不把路线强绑定到 Manipulation。
+
 ## 主要路线
 
 | 路线 | 核心假设 | 优势 | 风险 | 适用场景 |

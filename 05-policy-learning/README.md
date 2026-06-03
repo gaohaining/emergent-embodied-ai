@@ -9,14 +9,15 @@
 3. [behavior-cloning.md](behavior-cloning.md)：行为克隆。
 4. [diffusion-policy.md](diffusion-policy.md)：扩散策略。
 5. [vision-language-action.md](vision-language-action.md)：视觉语言动作模型。
-6. [reinforcement-learning.md](reinforcement-learning.md)：强化学习在机器人中的位置。
-7. [act.md](act.md)：Action Chunking Transformer。
-8. [rt-series.md](rt-series.md)：RT-1、RT-2、RT-X 路线。
-9. [flow-policy.md](flow-policy.md)：Flow Matching 和动作生成。
-13. [embodied-pretraining.md](embodied-pretraining.md)：具身预训练——为什么需要、数据来源之争、Scaling Law。
-10. [offline-rl.md](offline-rl.md)：离线强化学习。
-11. [hierarchical-policy.md](hierarchical-policy.md)：层级策略。
-12. [cross-embodiment-learning.md](cross-embodiment-learning.md)：跨本体学习。
+6. [../12-roadmaps/strategy-model-route.md](../12-roadmaps/strategy-model-route.md)：机器人策略模型路线图。
+7. [reinforcement-learning.md](reinforcement-learning.md)：强化学习在机器人中的位置。
+8. [act.md](act.md)：Action Chunking Transformer。
+9. [rt-series.md](rt-series.md)：RT-1、RT-2、RT-X 路线。
+10. [flow-policy.md](flow-policy.md)：Flow Matching 和动作生成。
+11. [embodied-pretraining.md](embodied-pretraining.md)：具身预训练——为什么需要、数据来源之争、Scaling Law。
+12. [offline-rl.md](offline-rl.md)：离线强化学习。
+13. [hierarchical-policy.md](hierarchical-policy.md)：层级策略。
+14. [cross-embodiment-learning.md](cross-embodiment-learning.md)：跨本体学习。
 
 ## 常见路线
 

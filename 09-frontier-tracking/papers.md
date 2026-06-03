@@ -1,5 +1,7 @@
 # 论文跟踪
 
+论文原文索引见 [papers-pdf/README.md](papers-pdf/README.md)。策略模型论文阅读比较见 [paper-notes/robot-strategy-models-comparison.md](paper-notes/robot-strategy-models-comparison.md)，逐篇精读见 [paper-notes/robot-strategy-models-detailed.md](paper-notes/robot-strategy-models-detailed.md)。这组笔记不把路线强绑定到 Manipulation，而是按机器人策略模型、VLA、动作生成、数据工具链和世界模型来组织。
+
 | 年份 | 标题 | 机构 | 方向 | 关键贡献 | 证据强度 | 链接 | 笔记 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2024 | OpenVLA: An Open-Source Vision-Language-Action Model | Stanford / UC Berkeley 等 | VLA | 开源 VLA 路线代表，需要跟踪复现和实机泛化 | 论文 / 项目页 / 代码 | [arXiv](https://arxiv.org/abs/2406.09246) | [精读](paper-notes/2024-openvla.md) / [路线笔记](model-paper-notes.md#11-openvla-an-open-source-vision-language-action-model) |

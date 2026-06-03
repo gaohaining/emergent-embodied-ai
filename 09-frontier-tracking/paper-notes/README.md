@@ -33,6 +33,8 @@
 
 | 论文 | 方向 | 笔记 |
 | --- | --- | --- |
+| 机器人策略模型论文阅读比较 | 策略学习 / VLA / 世界模型 / 工具链 | [robot-strategy-models-comparison.md](robot-strategy-models-comparison.md) |
+| 机器人策略模型逐篇精读 | 策略学习 / VLA / 世界模型 / 工具链 | [robot-strategy-models-detailed.md](robot-strategy-models-detailed.md) |
 | OpenVLA | VLA / 开源模型 | [2024-openvla.md](2024-openvla.md) |
 | Diffusion Policy | 动作生成 | [2023-diffusion-policy.md](2023-diffusion-policy.md) |
 | VoxPoser | LLM + 3D 操作 | [2023-voxposer.md](2023-voxposer.md) |

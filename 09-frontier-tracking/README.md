@@ -6,7 +6,10 @@
 
 - [inbox.md](inbox.md)：临时收集所有新材料。
 - [papers.md](papers.md)：论文跟踪表。
+- [papers-pdf/README.md](papers-pdf/README.md)：策略模型路线相关论文原文索引。
 - [paper-notes/](paper-notes/)：精选论文精读笔记。
+- [paper-notes/robot-strategy-models-comparison.md](paper-notes/robot-strategy-models-comparison.md)：机器人策略模型论文阅读比较。
+- [paper-notes/robot-strategy-models-detailed.md](paper-notes/robot-strategy-models-detailed.md)：机器人策略模型逐篇精读笔记。
 - [model-paper-notes.md](model-paper-notes.md)：模型谱系代表论文笔记（LLM/VLM/VAM/VLA/World Model/WAM/动作生成头）。
 - [tooling-and-system-stack.md](tooling-and-system-stack.md)：具身工程常用工具链与系统栈（感知、标定、规划、仿真）。
 - [community-insights.md](community-insights.md)：技术社区精彩文章（知乎、Medium、机器之心等）。
