@@ -27,3 +27,4 @@
 - VLM 的开放词汇能力如何稳定迁移到机器人动作？
 - 视频理解能否帮助机器人预测动作后果？
 - 视觉表征应该偏语义、几何，还是动作可供性？
+- 生成式基座能否替代专用感知模型？参见 [Vision Banana 精读](../09-frontier-tracking/paper-notes/2026-vision-banana.md)：把分割/深度/法线统一成"生成一张图"，单模型即超过 SAM 3 与 Depth Anything V3。

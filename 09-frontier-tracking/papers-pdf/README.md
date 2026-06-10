@@ -44,3 +44,4 @@ Last checked: 2026-06-03
 | 2025 | pi*0.6: a VLA That Learns From Experience | [PDF](2025-pistar06-recap.pdf) | [arXiv](https://arxiv.org/abs/2511.14759) | VLA + RL / RECAP | 用 offline RL、人在回路和自主经验提升 VLA 的代表。 |
 | 2026 | GigaBrain-0.5M*: a VLA That Learns From World Model-Based Reinforcement Learning | [PDF](2026-gigabrain-05m-ramp.pdf) | [arXiv](https://arxiv.org/abs/2602.12099) | VLA + world model + RL | 世界模型条件强化学习路线，属于高动态前沿。 |
 | 2026 | LeRobot: An Open-Source Library for End-to-End Robot Learning | [PDF](2026-lerobot.pdf) | [arXiv](https://arxiv.org/abs/2602.22818) | tooling / data / deployment | 开源端到端机器人学习工具链，连接学习路线和实践路线。 |
+| 2026 | Image Generators are Generalist Vision Learners (Vision Banana) | [PDF](2026-vision-banana.pdf) | [arXiv](https://arxiv.org/abs/2604.20329) | perception / 生成即感知 | 文生图基座轻量微调成通用视觉模型，分割超 SAM 3、深度超 Depth Anything V3。 |
